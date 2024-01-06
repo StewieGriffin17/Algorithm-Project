@@ -143,7 +143,7 @@ public class Main {
         System.out.println("\nChoose an account to view:");
 
         for (int i = 0; i < users.length; i++) {
-            System.out.println((i + 1) + ", Name: " + users[i][0]);
+            System.out.println((i + 1) + ". Name: " + users[i][0]);
         }
         System.out.println("6. Sort accounts by age");
 
@@ -168,7 +168,7 @@ public class Main {
             int chosenAccountLocation = getLocationNumber(selectedUser[3]);
 
             int[] shortestPaths = dijkstra(userLocation);
-            System.out.println("\nShortest path from user to chosen account: " + shortestPaths[chosenAccountLocation]);
+            System.out.println("\nShortest path from user to chosen account: " + shortestPaths[chosenAccountLocation] + "km");
             
             System.out.println("\nAll possible paths from user to chosen account:");
             boolean[] visited = new boolean[adjacencyList.length];
@@ -209,6 +209,7 @@ public class Main {
         for (String[] user : users) {
             System.out.println("Name: " + user[0] + ", Age: " + user[1]);
         }
+        displayAccounts();
     }
 
     private static int[] dijkstra(int source) {
